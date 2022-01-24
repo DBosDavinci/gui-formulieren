@@ -17,27 +17,27 @@ def startButton():
     start.place(relx = 0.5, rely = 0.5, anchor=CENTER)
 
 def bepaalTijd():
-    global email_entry,window
+    global tijd_entry,window
     window = Tk()
     window.geometry("100x100")
     window.title('')
 
-    signin = Frame(window)
-    signin.pack(padx=10, pady=10, fill='x', expand=True)
+    frame = Frame(window)
+    frame.pack(padx=10, pady=10, fill='x', expand=True)
 
-    email_label = Label(signin, text="Voer tijd in:")
-    email_label.pack(fill='x', expand=True)
+    tijd_label = Label(frame, text="Voer tijd in:")
+    tijd_label.pack(fill='x', expand=True)
 
-    email_entry = Entry(signin)
-    email_entry.pack(fill='x', expand=True)
-    email_entry.insert(0, "20")
+    tijd_entry = Entry(frame)
+    tijd_entry.pack(fill='x', expand=True)
+    tijd_entry.insert(0, "20")
 
-    startButton = Button(signin, text="press here to start", command=getEntry)
+    startButton = Button(frame, text="press here to start", command=getEntry)
     startButton.pack(fill='x', expand=True, pady=10)
 
 def getEntry():
-    global time, email_entry
-    time = int(email_entry.get())
+    global time, tijd_entry
+    time = int(tijd_entry.get())
     startFunc()
 
 def startFunc():
